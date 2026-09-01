@@ -94,16 +94,13 @@ const DEFAULT_MODEL = 'google/gemma-4-31b-it';
 
 // Ordered by observed reliability/speed — an early failing model delays every fallback behind it.
 const FALLBACK_MODELS = [
-  'openai/gpt-oss-20b',
-  'google/gemma-4-31b-it',
-  'mistralai/mistral-nemotron',
-  'nvidia/nemotron-3-super-120b-a12b'
-];
+  'google/gemma-4-31b-it'
+ ];
 
 // ─── Middleware ─────────────────────────────────────────────────────────
 
 app.use(cors());
-app.use(express.json({ limit: '50mb' }));
+app.use(express.json({ limit: '100mb' }));
 
 // Malformed JSON body -> clean OpenAI-style error instead of Express's default HTML error page.
 app.use((err, req, res, next) => {
