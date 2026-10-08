@@ -115,7 +115,7 @@ const FALLBACK_MODELS = [
 // ─── Middleware ─────────────────────────────────────────────────────────
 
 app.use(cors());
-app.use(express.json({ limit: '200mb' }));
+app.use(express.json({ limit: '500mb' }));
 
 // Malformed JSON body -> clean OpenAI-style error instead of Express's default HTML error page.
 app.use((err, req, res, next) => {
